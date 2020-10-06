@@ -1,4 +1,6 @@
-#en este ejercicio valido un mail pedido por consola solo valido que halla un arroba no tengo en cuenta el punto
+#este pequeño programa lo he hecho para ensayar los bucles y el if para calentar motores.
+
+#en este ejercicio valido un mail pedido por consola, solo valido que halla un arroba no tengo en cuenta el punto
 #se puede hacer era por no extenderme mucho.
 
 

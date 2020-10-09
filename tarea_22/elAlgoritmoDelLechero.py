@@ -21,7 +21,7 @@ try:
 	print(" ------------------------------------------------------------------------------------------- ")
 	ordenado=[]
 	ordenado=sorted(arr, key=lambda x: x['produccion']) #ordeno el array por kilos de carne en el cuerpo ascendente dando asi de mayor a menor la leche en el cuerpo
-	print(str(ordenado)) #chivato 
+	#print(str(ordenado)) chivato 
 	peso_totales_vacas=0
 	cont=0
 	i=0

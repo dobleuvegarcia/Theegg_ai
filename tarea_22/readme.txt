@@ -17,18 +17,4 @@ Salida: Cantidad máxima de producción de leche se puede obtener.
 
 PROGRAMACION EN PHYTON
 
-#creo un diccionario de datos e introduzco los datos de consola al diccionario.
-#tambien creo una clave index numerica para el diccionario para saber k numero de vaca a sido seleccionada
-#un litro de leche equivale a 1.03 kilos 
-#le resto los litros a los kilos de la vaca par ver si produce mucho o solo es carne y poca leche
-#guardo la relacion de carne-leche en el cuerpo en un campo del diccionario
-#añado el diccionario al array de diccionarios
-#ordeno el array por kilos de carne en el cuerpo ascendente siendo los kilos restantes de leche de mayor a meor en el cuerpo
-#comparo si es menor los kilos acumulados con el maximo del camion
-#sumo los pesos acumulados sin sobrepasar el limite del  camion
-#guardo en la variable los acumulados de leche que puede llevar el camion
-#enumero  la vaca seleccionada +1 ya que comienza por 0 en el indice del diccionario
-#por ultimo muestro los resultados.
 
-lo he comprobado con todas las posibilidades y funciona correctamente
-un saludo

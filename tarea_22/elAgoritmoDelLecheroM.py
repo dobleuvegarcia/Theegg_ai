@@ -84,7 +84,7 @@ def combinaciones_aceptadas(tot_posb_comb, arr_datos,num_tot_vacas,peso_maximo_c
 def optimizacion(arr_comb_posib):
 	#ordenado=sorted(arr_comb_posib, key=lambda x: x[1], reverse=True)
 
-	print("array combinaciones posibles",arr_comb_posib)
+	#print("array combinaciones posibles",arr_comb_posib)
 	#num_posibilidades=count(max(arr_comb_posib, key=lambda x: x[1]))
 
 	max_produccion_leche=max(arr_comb_posib, key=lambda x: x[1])

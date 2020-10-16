@@ -15,7 +15,7 @@ Entrada: Lista de la producción de leche por vaca, en litros por día.
 2.- El algoritmo que programes tiene que calcular la siguiente salida:
 Salida: Cantidad máxima de producción de leche se puede obtener.
 
-PROGRAMACION EN PHYTON
+PROGRAMACION EN PHYTON -----elAlgoritmoDelLecheroM(mejorado)
 creo cuatro funciones:
 pedir datos:
 donde pido datos y cotejo excepciones

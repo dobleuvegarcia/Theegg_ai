@@ -16,5 +16,18 @@ Entrada: Lista de la producción de leche por vaca, en litros por día.
 Salida: Cantidad máxima de producción de leche se puede obtener.
 
 PROGRAMACION EN PHYTON
+creo cuatro funciones:
+pedir datos:
+donde pido datos y cotejo excepciones
+
+
+todasCombinaciones:
+importo la clase itertools para calcular las posibles combinaciones
+
+cobinaciones aceptadas:
+aquellas que cumplen con el requisito de que su suma de peso entre si cumplan con el peso maximo del camion
+
+optimizacion:
+hallo el maximo del array de sumatorio de produccion leche y devuelvo la posible combinacion maxima produccion
 
 

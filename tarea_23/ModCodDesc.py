@@ -1,19 +1,88 @@
+
 import random
-def Abc():
-	abc=[]
-	abc=["A","B","C","D","E","F","G","H","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-	return(abc)
 
-def Baraja():
-	baraja=[{0:"t":1},{1:"t":2},{2:"t":3},{3:"t":4},{4:"t":5},{5:"t":6},{6:"t":7},{7:"t":8},{8:"t":9},{9:"t":10},{10:"t":11},{11:"t":12},{12:"t":13},{13:"d":1},{14:"d":2},{15:"d":3},{16:"d":4},{17:"d":5},{18:"d":6},{19:"d":7},{20:"d":8},{21:"d":9},{22:"d":10},{23:"d":11},{24:"d":12},{25:"d":13},{26:"c":1},{27:"c":2},{28:"c":3},{29:"c":4},{30:"c":5},{31:"c":6},{32:"c":7},{33:"c":8},{34:"c":9},{35:"c":10},{36:"c":11},{37:"c":12},{38:"c":13},{39:"p":1},{40:"p":2},{41:"p":3},{42:"p":4},{43:"p":5},{44:"p":6},{45:"p":7},{46:"p":8},{47:"p":9},{48:"p":10},{49"p":11},{50:"p":12},{51:"p":13},{52:"jkA":53},{53:"jkB":53}]
-	rand_baraj=random.shuffle(baraja)
+class Jugada():
+	"""docstring for Baraja"""
+	def __init__(self):
+		self.__abc=[]
+		self.__abc=["A","B","C","D","E","F","G","H","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+		self.__palo = ("T","D","C","P")
+		self.__num = (1,2,3,4,5,6,7,8,9,0,11,12,13)
+		self.__cartas=[]
+		for p in range(len(self.__palo)):
+			for n in range(len(self.__num)):
+				
+				pc=self.__palo[p]
+				nc=self.__num[n]
+				self.__cartas.append([pc,nc])
 
-	return(rand_baraj)
+		self.__cartas.append(["JOKER_A",53])
+		self.__cartas.append(["JOKER_B",53])
+		self.__barajado=False
+
+
+	def barajar(self,barajado):
+		self.__barajado=barajado
+		#print(self.__cartas)
+		if (self.__barajado):
+			baraja=self.__cartas
+			self.__barajado=random.sample(baraja,53)
+			return(list(self.__barajado))
+
+
+	def JOKER_A_JOKER_B(self,barajados):
+		for j_a in range(len(barajados)):
+			if (barajados[j_a][0]=="JOKER_A"):
+				old_index = barajados.index(barajados[j_a])
+				if old_index==53:
+					new_index=1
+					#print(new_index)
+					itm=barajados[j_a]
+					barajados.remove(itm)
+					barajados.insert(new_index, itm)
+					#print(old_index, itm, new_index)
+					break;
+
+
+				else:	
+					new_index=old_index+1
+					#print(new_index)
+					itm=barajados[j_a]
+					barajados.remove(itm)
+					barajados.insert(new_index, itm)
+					#print(old_index, itm, new_index)
+					break;
 		
+		for j_b in range(len(barajados)):
+			if (barajados[j_b][0]=="JOKER_B"):
+				old_index = barajados.index(barajados[j_b])
+				if old_index==53:
+					new_index=2
+					#print(new_index)
+					itm=barajados[j_a]
+					barajados.remove(itm)
+					barajados.insert(new_index, itm)
+					#print(old_index, itm, new_index)
+					break;
+				else:
+					new_index=old_index+2
+					#print(new_index)
+					itm=barajados[j_b]
+					barajados.remove(itm)
+					barajados.insert(new_index, itm)
+					#print(old_index, itm, new_index)
+					break;
+		return(barajados)
 
+	def intercambiar(self,pos_jokers):
+		pass
 
-b=Baraja()
-print(b)
+jugar=Jugada()
+
+barajados=jugar.barajar(True)
+baraja2=barajados
+posicionamiento_jokers=jugar.JOKER_A_JOKER_B(barajados)
+intercambiado=intercambiar(posicionamiento_jokers)
 
 
 

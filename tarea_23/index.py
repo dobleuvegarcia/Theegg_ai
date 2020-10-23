@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-#from ModCodDesc import *
+from ModCodDesc import *
 
 
 raiz=Tk()
@@ -26,18 +26,27 @@ miFrame.pack()
 
 
 cod=StringVar()
-
+x=StringVar()
 texto=StringVar()
 textop=StringVar()
 codx=StringVar()
+codigo=StringVar()
 def codificar():
+	codx=cuadroTexto.get()
+	jugar=Jugada(codx)
+	jugar.Repetir()
+	x=jugar.ObtenerLetraCodigo()
+	cod=x
 
-	cerrar=messagebox.askokcancel("**Destruir Código**",cuadroTexto.get())
+
+	cerrar=messagebox.askokcancel("**Destruir Código**",cod)
 
 	if cerrar==True:
 		raiz.destroy()
 	else:
-		textop=cuadroTexto.get()
+		
+		cerrar=messagebox.askokcancel("**Destruir Código**","vuelve a introducir la frase a codificar")
+		
 		#codx=codigo(textop)
 		#print(codx)
 
@@ -64,7 +73,7 @@ nombreLabel.grid(row=2, column=2, padx="10", pady="10")
 
 
 
-botonCodificar=Button(raiz, text="codificar")#, command=lambda:codificar())
+botonCodificar=Button(raiz, text="codificar", command=lambda:codificar())
 botonCodificar.pack()
 
 raiz.wm_attributes("-transparentcolor", 'grey')

@@ -13,3 +13,6 @@ tipo String.
 
 He creado una interface a la cual le he añadido unos efectos agujero en transparencias.
 para introducir el texto a codificar tendras que clicar el la calavera sobre la linea del inpùt
+Para codificar dale al boton codificar y luego aceptar.
+
+un saludo .

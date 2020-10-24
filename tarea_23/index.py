@@ -1,3 +1,6 @@
+#HE CREADO UNA INTERFACE DE USUARIO A LA QUE LE HE DADO UNOS EFECTOS ESPECIALES 
+#de agujero y transparentes
+
 from tkinter import *
 from tkinter import messagebox
 from ModCodDesc import *

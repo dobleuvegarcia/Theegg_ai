@@ -1,5 +1,7 @@
 
 import random
+#HE HECHO UNA CLASE JUGADA A LA CUAL HE INICIALIZADO EL ABECEDARIO Y LA BARAJA Y BARAJEADO
+#TAMBIEN RECOJE EL TEXTO A CODIFICAR
 
 class Jugada():
 	"""docstring for Baraja"""
@@ -23,7 +25,7 @@ class Jugada():
 		self.__baraja2=self.__cartas.copy()
 		self.__texto=texto.upper()
 		#print(self.__texto)
-
+		#LLAMADAS A LAS FUNCIONES PARA REALIZAR LOS PRIMEROS PASOS
 		self.__cartas=self.JOKER_A_JOKER_B(self.__cartas)
 
 		self.__cartas=self.Intercambiar(self.__cartas)
@@ -253,7 +255,7 @@ class Jugada():
 		return(codigo)
 
 
-
+#PASO 2 DSESCODIFICAR CON LA BARAJA NUMERO 2
 
 	def descodificar(self, cod):
 		

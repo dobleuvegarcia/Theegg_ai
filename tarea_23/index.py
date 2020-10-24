@@ -31,21 +31,24 @@ texto=StringVar()
 textop=StringVar()
 codx=StringVar()
 codigo=StringVar()
+descodificar=StringVar()
 def codificar():
 	codx=cuadroTexto.get()
 	jugar=Jugada(codx)
 	jugar.Repetir()
 	x=jugar.ObtenerLetraCodigo()
 	cod=x
+	
 
-
-	cerrar=messagebox.askokcancel("**Destruir Código**",cod)
-
+	cerrar=messagebox.askokcancel("**PARA DESCODIFICAR ACEPTA**",cod)
 	if cerrar==True:
-		raiz.destroy()
+		jugar.descodificar(cod)
+		jugar.RepetirPaso2()
+		descodificar=jugar.ObtenerLetraCodigo2()
+		cerrar=messagebox.askokcancel("**descodificado**",descodificar)
+
 	else:
-		
-		cerrar=messagebox.askokcancel("**Destruir Código**","vuelve a introducir la frase a codificar")
+		raiz.destroy()
 		
 		#codx=codigo(textop)
 		#print(codx)

@@ -1,6 +1,6 @@
 En este ejercicio valido el numero en una interfaz comprobando k solo se puedan
-introducir numeros enteros o decimales.
-hay que instalar :
+introducir numeros enteros o decimales index.py.
+hay que instalar la libreria pillow:
 
 $ python -m pip install pillow
 

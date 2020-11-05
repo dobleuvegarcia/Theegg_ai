@@ -7,7 +7,7 @@ def PedirDatos():
 		arr=[]
 		while num_tot_vacas>cont:
 			peso=float(input("introduce el peso de la vaca numero: " +str(cont+1)+"   "))
-			diccionario={}
+			vacas={}
 			produccion_leche=float(input("introduce la produccion de leche de la vaca numero: " +str(cont+1)+"   "))
 			if produccion_leche > peso -10:
 				try:
@@ -18,21 +18,21 @@ def PedirDatos():
 							chivato=False
 				except:
 					print("introduce bien los parametros fin del programa")
-			diccionario[0]=int(cont)
-			diccionario[1]=float(peso)
-			diccionario[2]=float(produccion_leche)
+			vacas[0]=int(cont)
+			vacas[1]=float(peso)
+			vacas[2]=float(produccion_leche)
 			
-			arr.append(diccionario)
+			arr.append(vacas)
 			cont=cont+1
 		return(arr)
 	except:
 		print("debes introducir bien los datos")
-#importo la clase itertools pra poder crear todas las combinaciones posibles el TodasCombinaciones()
+#importo la clase itertools para poder crear todas las combinaciones posibles el TodasCombinaciones()
 #paso por parametro el numero total de vacas que hay por la zona 
 
 def TodasCombinaciones (num_tot_vacas):
 	#aqui vamos a hallar todas las combinaciones que hay posibles 
-	todas_combinaciones=list(itertools.product([0,1],repeat=num_tot_vacas))
+	todas_combinaciones=list(itertools.product([0,1], repeat=num_tot_vacas))
 	return(todas_combinaciones)
 #en esta funcion solo valoro las que sumando todos los pesos de esa combinacion no superen
 #el peso del camion
@@ -82,16 +82,8 @@ def combinaciones_aceptadas(tot_posb_comb, arr_datos,num_tot_vacas,peso_maximo_c
 	return(list_opciones)
 
 def optimizacion(arr_comb_posib):
-	#ordenado=sorted(arr_comb_posib, key=lambda x: x[1], reverse=True)
-
-	#print("array combinaciones posibles",arr_comb_posib)
-	#num_posibilidades=count(max(arr_comb_posib, key=lambda x: x[1]))
-
 	max_produccion_leche=max(arr_comb_posib, key=lambda x: x[1])
-	#for k in max_produccion_leche:
-		#print("linea maxima produccion",k)
-		#num_posibilidades=len(max_produccion_leche)
-	#print("array max leche",max_produccion_leche)
+	
 	return(max_produccion_leche)
 
 num_tot_vacas=int(input("introduce el numero total de vacas de Tolosa que estan a la venta:   "))
@@ -122,5 +114,3 @@ for p_c in range(len(posibles_compras)):
 	#for t in range(len(lineas_final)):
 
 print(" ------------------------------------------------------------------------------------------- ")
-
-

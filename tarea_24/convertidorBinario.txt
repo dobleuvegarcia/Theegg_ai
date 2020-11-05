@@ -1,0 +1,4 @@
+En este ejercicio valido el numero en una interfaz comprobando k solo se puedan
+introducir numeros enteros o decimales.
+mas tarde en la funcion redondeo el numero a un entero para obetener el bianrio del entero.
+y muestro el array de restos del reves para obtener el binario de ese numero redondeado.

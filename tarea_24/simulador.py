@@ -10,7 +10,7 @@ def Conversor(num):
 		resto=numEntero % 2
 		restoAcumulado.append(resto)
 		numEntero=int(numEntero/2)
-		#si el resto es uno añado ese uno al codigo binario en el ultimo lugar
+		#si el numEntero es uno añado ese uno al codigo binario en el ultimo lugar ya k no es divisible por 2
 		if numEntero==1:
 			restoAcumulado.append(numEntero)
 			break;

@@ -2,19 +2,23 @@ from tkinter import ttk
 import tkinter as tk
 from tkinter import *
 from tkinter import messagebox
+from PIL import Image, ImageTk
 from simulador import *
 #he construido una interfaz para el ejercicio 
 raiz= tk.Tk()
 raiz.title("*********simulador binario*********")
-raiz.config(bg="#FF00FF", bd=35, relief="groove")
+
+raiz.config( bg="#FF00FF",bd=35, relief="groove")
 
 raiz.resizable(False,False)
 
-miFrame= Frame(raiz, width=500, height=400)
-miFrame.config(bg="#FF00FF")
+miFrame= Frame(raiz, width=500, height=400,bg="#FF00FF")
 
 miFrame.pack()
 
+img = Image.open('icono.jpg')
+tkimage = ImageTk.PhotoImage(img)
+label=tk.Label(raiz, image=tkimage, width=200, height=100).pack()
 
 #vakido k solo introduzca numeros y el punto de la coma
 
@@ -34,11 +38,10 @@ def binario():
 entry = ttk.Entry(
     validate="key",
     validatecommand=(miFrame.register(validate_entry), "%S"))
-
 entry.pack()
 
 nombreLabel=Label(miFrame, text="introduce un numero ",bg="#FF00FF", fg="#00FFFF", font=("Comic Sans MS",18)) 
-nombreLabel.grid(row=2, column=2, padx="10", pady="10")
+nombreLabel.grid(row=1, column=2, padx="10", pady="10")
 
 
 

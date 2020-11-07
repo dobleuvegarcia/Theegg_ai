@@ -51,10 +51,10 @@ def vs():
 
 
 img = PhotoImage(file='pikachu.png')
-boton1 = Button(miFrame, text="test", width=150, height=150, image=img, justify="left")
+boton1 = Button(miFrame, text="test", width=150, height=150, image=img, justify="left",bg="#FF00FF")
 boton1.grid(row=1, column=1, padx="10", pady="10")
 img2 = PhotoImage(file='Jigglypuff.png')
-boton2 = Button(miFrame,text="test", width=150, height=150, image=img2, justify="center")
+boton2 = Button(miFrame,text="test", width=150, height=150, image=img2, justify="center",bg="#FF00FF")
 boton2.grid(row=1, column=3, padx="10", pady="10")
 img3 = PhotoImage(file='vs.png')
 boton3 = Button(miFrame,text="test", width=150, height=150, image=img3, justify="right",bg="white",command=lambda:vs())

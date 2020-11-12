@@ -111,6 +111,6 @@ for p_c in range(len(posibles_compras)):
 			print("vacas implicadas numero  : ",num_v+1)
 			print("peso implicadas : ",peso_v)
 			print("leche implicadas : ",leche_v)
-	#for t in range(len(lineas_final)):
+	
 
 print(" ------------------------------------------------------------------------------------------- ")

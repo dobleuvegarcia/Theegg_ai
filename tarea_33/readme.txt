@@ -11,8 +11,9 @@ $ python -m pip install pillow
 
 si tienes anaconda:
 conda install -c anaconda pillow
-
 en la consola cmd.
+
+si aun asi no consigues instalar la libreria pillow preguntame y estare encantada de ayudarte a instalarla.
 para ver las imagenes.
 es un ejercicio simple.
 el pikachu.py es el modulo que he creado con una clase (jugada)y una funcion de(vs) muy sencilla

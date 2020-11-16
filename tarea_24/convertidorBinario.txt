@@ -7,6 +7,7 @@ $ python -m pip install pillow
 
 si tienes anaconda la instruccion es:
 conda install -c anaconda pillow
+si aun asi no consigues instalar la libreria pillow preguntame y estare encantada de ayudarte a instalarla.
 
 para poder ver la imagen de fondo
 

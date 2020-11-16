@@ -2,7 +2,11 @@ En este ejercicio valido el numero en una interfaz comprobando k solo se puedan
 introducir numeros enteros o decimales index.py.
 hay que instalar la libreria pillow:
 
+windows:
 $ python -m pip install pillow
+
+si tienes anaconda la instruccion es:
+conda install -c anaconda pillow
 
 para poder ver la imagen de fondo
 

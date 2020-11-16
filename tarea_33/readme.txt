@@ -6,7 +6,12 @@ Chulo, ¿verdad?
 
 
 He hecho una index para el ejercicio tendras k instalar 
-$ python -m pip install pillow  
+para windows:
+$ python -m pip install pillow 
+
+si tienes anaconda:
+conda install -c anaconda pillow
+
 en la consola cmd.
 para ver las imagenes.
 es un ejercicio simple.

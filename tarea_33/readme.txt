@@ -5,7 +5,9 @@ programación, es decir, construir el programa tal cual se indica en el diagrama
 Chulo, ¿verdad?
 
 
-He hecho una index para el ejercicio tendras k instalar 
+He hecho una index para el ejercicio tendras k instalar pillow
+
+https://recursospython.com/guias-y-manuales/instalar-pil-pillow-efectos/
 para windows:
 $ python -m pip install pillow 
 

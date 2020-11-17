@@ -12,6 +12,7 @@ para windows:
 $ python -m pip install pillow 
 
 si tienes anaconda:
+https://anaconda.org/anaconda/pillow
 conda install -c anaconda pillow
 en la consola cmd.
 

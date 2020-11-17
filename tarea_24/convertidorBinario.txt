@@ -2,6 +2,8 @@ En este ejercicio valido el numero en una interfaz comprobando k solo se puedan
 introducir numeros enteros o decimales index.py.
 hay que instalar la libreria pillow:
 
+https://recursospython.com/guias-y-manuales/instalar-pil-pillow-efectos/
+
 windows:
 $ python -m pip install pillow
 

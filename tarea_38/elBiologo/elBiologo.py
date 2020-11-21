@@ -12,18 +12,18 @@ class Nucleotidos():
 	dando como resultado los adyacentes o comunes entre si de maxima longitud"""
 
 	def __init__(self):
-		super(Nucleotidos, self).__init__()
 		self.nucleotidos=["Adenina","Citosina","Guanina","Timina"]
-		self.nomcl=""
+		self.nomcl=self.Iniciales()
 
 		#creamos una tabla con las nomenclaturas de la tabla nucleotidos
 		#con la cual trabajaremos para la comparacion de las cadenas de adns
+	def Iniciales(self):
+		nomcl=""
 		for i in range(len(self.nucleotidos)):
 			#llamada a la primera letra de  tabla nucleotidos
 			nom=next(self.Nomenclatura(self.nucleotidos[i])) 
-			self.nomcl+=nom#acumulamos cada inicial
-		
-
+			nomcl+=nom#acumulamos cada inicial
+		return(nomcl)
 
 	def Nomenclatura(self,nucl):
 		# devuelve la primera inicial de la lista nucleotidos
@@ -89,8 +89,8 @@ class Nucleotidos():
 			 muestra cadena de nucleotidos en comun con los 2 ADNs. 
 			 podria haber nucleotidos que no existen en alguna
 			 cadena de ADN y son excluidos de posibles combinaciones._______
-			 _________________________________________________________
-		print("buscar: NUCLEOTIDOS COMUNES en 2 ADNs :  ",ady_l)_____"""
+			 ______________________________________________________
+		print("buscar: NUCLEOTIDOS COMUNES en 2 ADNs :  ",ady_l)________"""
 
 		return(adyacentes)
 
@@ -106,9 +106,9 @@ POR PANTALLA.
 EN ESTE EJERCICIO SOLO SE PIDE EJECUCION NI ENTRADA NI DALIDA DE DATOS:
  desactivar las comillas SOLO para LA DEMOSTRACION 
  Y VISUALIZACION DE PANTALLA DE RESULTADOS:
- ____________________________________________________
+ ______________________________________________________
 
 print("1ª ADN ALEATORIO:  ",adn1)
 print("2ª ADN ALEATORIO:  ",adn2)
-print("MAXIMOS NUCLEOTIDOS COMUNES ADNs:" ,ady)_______"""
+print("MAXIMOS NUCLEOTIDOS COMUNES ADNs:" ,ady)_____"""
 

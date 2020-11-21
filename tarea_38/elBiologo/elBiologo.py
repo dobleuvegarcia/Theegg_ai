@@ -13,14 +13,15 @@ class Nucleotidos():
 
 	def __init__(self):
 		super(Nucleotidos, self).__init__()
-		self.nucleotidos=["Adenina","Cistosina","Guanina","Timina"]
+		self.nucleotidos=["Adenina","Citosina","Guanina","Timina"]
 		self.nomcl=""
 
-		#creamos una lista con las nomenclaturas de la lista nucleotidos
-		#con la cual trabajaremos para la comparacion de las listas de adns
+		#creamos una tabla con las nomenclaturas de la tabla nucleotidos
+		#con la cual trabajaremos para la comparacion de las cadenas de adns
 		for i in range(len(self.nucleotidos)):
-			nom=next(self.Nomenclatura(self.nucleotidos[i]))
-			self.nomcl+=nom
+			#llamada a la primera letra de  tabla nucleotidos
+			nom=next(self.Nomenclatura(self.nucleotidos[i])) 
+			self.nomcl+=nom#acumulamos cada inicial
 		
 
 
@@ -33,15 +34,15 @@ class Nucleotidos():
 	def RndAdn(self):
 		c=self.nomcl
 		adn=""
-		for n in range(13):
-			a=random.choice(c)
-			adn+=a
+		for n in range(13):#hasta rango 13
+			a=random.choice(c)#elige una letra cualquiera de c(self.nomencl)
+			adn+=a#acumula la letra de la var(a) creando secuencia en adn
+		#devolvemos una secuencia de adn rango 13
 		return(adn)
  
 	#comparacion de las dos cadenas de ADN
 	def Nu_comparate(self, adn1,adn2):
-		comunes = set(adn1).intersection(set(adn2))#hallamos los nuceotidos que hay en comun
-		#print("nucleotidos en comun : ",comunes)
+		comunes = set(adn1).intersection(set(adn2))
 		l_ady1=0
 		l_ady2=0
 		ady_l=""
@@ -88,8 +89,8 @@ class Nucleotidos():
 			 muestra cadena de nucleotidos en comun con los 2 ADNs. 
 			 podria haber nucleotidos que no existen en alguna
 			 cadena de ADN y son excluidos de posibles combinaciones._______
-			 ________________________________________________________
-		print("buscar: NUCLEOTIDOS COMUNES en 2 ADNs :  ",ady_l)______"""
+			 _________________________________________________________
+		print("buscar: NUCLEOTIDOS COMUNES en 2 ADNs :  ",ady_l)_____"""
 
 		return(adyacentes)
 
@@ -105,9 +106,9 @@ POR PANTALLA.
 EN ESTE EJERCICIO SOLO SE PIDE EJECUCION NI ENTRADA NI DALIDA DE DATOS:
  desactivar las comillas SOLO para LA DEMOSTRACION 
  Y VISUALIZACION DE PANTALLA DE RESULTADOS:
- ___________________________________________________
+ ____________________________________________________
 
 print("1ª ADN ALEATORIO:  ",adn1)
 print("2ª ADN ALEATORIO:  ",adn2)
-print("MAXIMOS NUCLEOTIDOS COMUNES ADNs:" ,ady)________"""
+print("MAXIMOS NUCLEOTIDOS COMUNES ADNs:" ,ady)_______"""
 

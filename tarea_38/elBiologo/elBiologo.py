@@ -1,4 +1,3 @@
-
 #En este programa vamos testear los adyacentes comunes a dos cadenas de ADN.
 import itertools
 import random
@@ -55,13 +54,13 @@ class Nucleotidos():
 			l_ady2+=adn2.count(c)#num por nucleotidos comunes en adn2
 			l_ady=min(l_ady1,l_ady2)#long max de secuencia=minima en comun
 			ady_l+=c#cadena letras de nucleotidos
-			ady=0#inicialiar la longitud maxima del patron en cadenas de adn
 			for l in range(l_ady):#en el rango de secuencia maxima en comun
 			#hallamos las posibles combinaciones de nucleotidos (ady_l)
 			#desde cont=2 parejas hasta que cont=l_ady (rango de secuencia maxima en comun)
 				pos_comb_ady=list(itertools.product(ady_l, repeat=cont))
 			cont+=1
 		#recorremos las posibles combinaciones adyacentes
+		ady=0#inicialiar la longitud maxima del patron en cadenas de adn
 		for p in range(len(pos_comb_ady)):
 			patron=""#inicializar/limpiar nomenclaturas, nucleotidos en comun
 			for p1 in pos_comb_ady[p]:#sacamos la primera posible combinacion adyacente
@@ -89,10 +88,9 @@ class Nucleotidos():
 			 muestra cadena de nucleotidos en comun con los 2 ADNs. 
 			 podria haber nucleotidos que no existen en alguna
 			 cadena de ADN y son excluidos de posibles combinaciones._______
+			 ________________________________________________________
+		print("buscar: NUCLEOTIDOS COMUNES en 2 ADNs :  ",ady_l)______"""
 
-			 ______________________________________________________________"""
-
-		print("buscar: NUCLEOTIDOS COMUNES en 2 ADNs :  ",ady_l)
 		return(adyacentes)
 
 nu=Nucleotidos()
@@ -107,9 +105,9 @@ POR PANTALLA.
 EN ESTE EJERCICIO SOLO SE PIDE EJECUCION NI ENTRADA NI DALIDA DE DATOS:
  desactivar las comillas SOLO para LA DEMOSTRACION 
  Y VISUALIZACION DE PANTALLA DE RESULTADOS:
- ___________________________________________________________"""
+ ___________________________________________________
 
 print("1ª ADN ALEATORIO:  ",adn1)
 print("2ª ADN ALEATORIO:  ",adn2)
-print("MAXIMOS NUCLEOTIDOS COMUNES ADNs:" ,ady)
+print("MAXIMOS NUCLEOTIDOS COMUNES ADNs:" ,ady)________"""
 

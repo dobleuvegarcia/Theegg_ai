@@ -5,27 +5,28 @@ import random
 import re
 class Nucleotidos():
 	"""Creamos una clase llamada Nucleotidos que se inicializa 
-	con la tabla de "numenclatura" nucleotidos.
-	y dos funciones:
-	1ª funcion crea dos secuencias de adn aleatorias de longitud 13
-	2ª funcion compara las dos secuencias de ADN 
-	dando como resultado los adyacentes o comunes entre si"""
+	con la tabla de "numenclatura" y nucleotidos 
+	tiene dos metodos:
+	1ª metodo RndAdn crea dos secuencias de adn aleatorias de longitud 13
+	2ª metodo Nu_comparate compara los nucleotidos posibles 
+	en las dos secuencias de ADN 
+	dando como resultado los adyacentes o comunes entre si de maxima longitud"""
 
 	def __init__(self):
 		super(Nucleotidos, self).__init__()
 		self.nucleotidos=["Adenina","Cistosina","Guanina","Timina"]
 		self.nomcl=""
-		
+
 		#creamos una lista con las nomenclaturas de la lista nucleotidos
 		#con la cual trabajaremos para la comparacion de las listas de adns
 		for i in range(len(self.nucleotidos)):
 			nom=next(self.Nomenclatura(self.nucleotidos[i]))
 			self.nomcl+=nom
-		#creo la lista adn1 y adn2 aleatoria
+		
 
 
 	def Nomenclatura(self,nucl):
-		# devuelve la primera letra de la posicion de la lista nucleotidos
+		# devuelve la primera inicial de la lista nucleotidos
 		for n in nucl:
 				yield from n
 
@@ -90,13 +91,14 @@ class Nucleotidos():
 			 podria haber nucleotidos que no existen en alguna
 			 cadena de ADN y son excluidos de posibles combinaciones._______
 
-			 ______________________________________________________________"""
+			 _________________________________________________________
 
 
-		print("buscar: NUCLEOTIDOS COMUNES en 2 ADNs :  ",ady_l)
+		print("buscar: NUCLEOTIDOS COMUNES en 2 ADNs :  ",ady_l)_____"""
 		return(adyacentes)
 
 nu=Nucleotidos()
+#creo la lista adn1 y adn2 aleatoria
 adn1=nu.RndAdn()
 adn2=nu.RndAdn()
 ady=nu.Nu_comparate(adn1,adn2)
@@ -107,9 +109,9 @@ POR PANTALLA.
 EN ESTE EJERCICIO SOLO SE PIDE EJECUCION NI ENTRADA NI DALIDA DE DATOS:
  desactivar las comillas SOLO para LA DEMOSTRACION 
  Y VISUALIZACION DE PANTALLA DE RESULTADOS:
- ___________________________________________________________"""
+ ____________________________________________________
 
 print("1ª ADN ALEATORIO:  ",adn1)
 print("2ª ADN ALEATORIO:  ",adn2)
-print("MAXIMOS NUCLEOTIDOS COMUNES ADNs:" ,ady)
+print("MAXIMOS NUCLEOTIDOS COMUNES ADNs:" ,ady)_______"""
 

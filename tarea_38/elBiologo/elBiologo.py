@@ -78,16 +78,14 @@ class Nucleotidos():
 						ady=y#guardamos la longitud mas larga
 						adyacentes=patron#guardamos la secuencia de longitud maxima
 
-			
-
-"""solo visualizar por pantalla, para correccion.
+			"""solo visualizar por pantalla, para correccion.
 			 muestra cadena de nucleotidos en comun con los 2 ADNs. 
 			 podria haber nucleotidos que no existen en alguna
 			 cadena de ADN y son excluidos de posibles combinaciones._______
-			 _______________________________________________________
+			 ______________________________________________________
 		print("buscar: NUCLEOTIDOS COMUNES en 2 ADNs :  ",ady_l)
-		print(" LONG MAX ADYACENTES POSIBLES : " ,l_ady)_______"""
-
+		print(" LONG MAX ADYACENTES POSIBLES : " ,l_ady)
+________"""
 		return(adyacentes)
 
 nu=Nucleotidos()
@@ -102,9 +100,9 @@ POR PANTALLA.
 EN ESTE EJERCICIO SOLO SE PIDE EJECUCION NI ENTRADA NI DALIDA DE DATOS:
  desactivar las comillas SOLO para LA DEMOSTRACION 
  Y VISUALIZACION DE PANTALLA DE RESULTADOS:
- _________________________________________________________
-
+ ______________________________________________________
 print("1ª ADN ALEATORIO:  ",adn1)
 print("2ª ADN ALEATORIO:  ",adn2)
-print("RELSUTADO MAXIMOS ADYACENTES EN AMBOS ADNs:" ,ady)__"""
+print("RELSUTADO MAXIMOS ADYACENTES EN AMBOS ADNs:" ,ady)
 
+_____"""

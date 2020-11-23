@@ -46,7 +46,6 @@ class Nucleotidos():
 		l_ady1=0
 		l_ady2=0
 		ady_l=""
-		adyacentes=""
 		pc_ady=[]
 		cont=2
 		for c in comunes:#por cada nucleotido en comun:
@@ -62,30 +61,36 @@ class Nucleotidos():
 			cont+=1
 		#recorremos las posibles combinaciones adyacentes
 		ady=0#inicialiar la longitud maxima del patron en cadenas de adn
+		adyacentes=[]
 		for p in range(len(pos_comb_ady)):
 			patron=""#inicializar/limpiar nomenclaturas, nucleotidos en comun
 			for p1 in pos_comb_ady[p]:#sacamos la primera posible combinacion adyacente
-				patron+=p1#añadimos las numenclaturas para sacar el patron
-				#buscamos el patron en adn1 de las posibles combinaciones
+				patron+=p1#añadimos las numenclaturas para sacar el patron, a una cadena de busqueda
+				#buscamos el patron o cadena en adn1 de las posibles combinaciones
 				a1=re.findall(patron, adn1)
 				#buscamos el patron en adn2 de las posibles combinaciones
 				a2=re.findall(patron, adn2)
 				#extraemos el patron de a1(n) y a2(h) encontrados
 				#recorremos para saber si es igual en los adns
-				if a1 and a2:#si los patrones son iguales
-					y=len(patron)#hallamos la longitud
-					if y>ady:#comparamos si la longitud es mayor a la encontrada
-						ady=y#guardamos la longitud mas larga
-						adyacentes=patron#guardamos la secuencia de longitud maxima
+			if a1 and a2:#si los patrones son iguales
+				y=len(patron)#hallamos la longitud
+				if y==ady:
+					adyacentes.append(patron)
 
-			"""solo visualizar por pantalla, para correccion.
+				elif y>ady:#comparamos si la longitud es mayor a la encontrada
+					adyacentes=[]
+					ady=y#guardamos la longitud mas larga
+					adyacentes.append(patron)#guardamos la secuencia de longitud maxima
+
+
+				"""solo visualizar por pantalla, para correccion.
 			 muestra cadena de nucleotidos en comun con los 2 ADNs. 
 			 podria haber nucleotidos que no existen en alguna
 			 cadena de ADN y son excluidos de posibles combinaciones._______
 			 ______________________________________________________
 		print("buscar: NUCLEOTIDOS COMUNES en 2 ADNs :  ",ady_l)
-		print(" LONG MAX ADYACENTES POSIBLES : " ,l_ady)
-________"""
+		print(" LONG MAX ADYACENTES POSIBLES : " ,l_ady)________"""
+
 		return(adyacentes)
 
 nu=Nucleotidos()
@@ -100,9 +105,9 @@ POR PANTALLA.
 EN ESTE EJERCICIO SOLO SE PIDE EJECUCION NI ENTRADA NI DALIDA DE DATOS:
  desactivar las comillas SOLO para LA DEMOSTRACION 
  Y VISUALIZACION DE PANTALLA DE RESULTADOS:
- ______________________________________________________
+ _______________________________________________________
 print("1ª ADN ALEATORIO:  ",adn1)
 print("2ª ADN ALEATORIO:  ",adn2)
-print("RELSUTADO MAXIMOS ADYACENTES EN AMBOS ADNs:" ,ady)
+print("RELSUTADO MAXIMOS ADYACENTES EN AMBOS ADNs:" ,ady)____"""
 
-_____"""
+

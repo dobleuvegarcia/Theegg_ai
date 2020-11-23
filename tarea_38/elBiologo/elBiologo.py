@@ -1,4 +1,4 @@
-#En este programa vamos testear los adyacentes comunes a dos cadenas de ADN.
+#En este programa vamos testear los maximos adyacentes comunes a dos cadenas de ADN.
 import itertools
 import random
 import re
@@ -70,27 +70,23 @@ class Nucleotidos():
 				a1=re.findall(patron, adn1)
 				#buscamos el patron en adn2 de las posibles combinaciones
 				a2=re.findall(patron, adn2)
-				#extremos el patron de a1(n) y a2(h) encontrados
+				#extraemos el patron de a1(n) y a2(h) encontrados
 				#recorremos para saber si es igual en los adns
-				for n in a1:
-					for h in a2:
-						if n==h:#si los patrones son iguales
-							y=len(n)#hallamos la longitud
-							if y>ady:#comparamos si la longitud es mayor a la encontrada
-								ady=y#guardamos la longitud mas larga
-								adyacentes=n#guardamos la secuencia de longitud maxima
+				if a1 and a2:#si los patrones son iguales
+					y=len(patron)#hallamos la longitud
+					if y>ady:#comparamos si la longitud es mayor a la encontrada
+						ady=y#guardamos la longitud mas larga
+						adyacentes=patron#guardamos la secuencia de longitud maxima
 
-						else: #sino liberamos memoria borrando el patron 
-						#generado en posibles combinaciones
-							pos_comb_ady.remove(n)
+			
 
-
-			"""solo visualizar por pantalla, para correccion.
+"""solo visualizar por pantalla, para correccion.
 			 muestra cadena de nucleotidos en comun con los 2 ADNs. 
 			 podria haber nucleotidos que no existen en alguna
 			 cadena de ADN y son excluidos de posibles combinaciones._______
-			 ______________________________________________________
-		print("buscar: NUCLEOTIDOS COMUNES en 2 ADNs :  ",ady_l)________"""
+			 ______________________________________________________________"""
+		print("buscar: NUCLEOTIDOS COMUNES en 2 ADNs :  ",ady_l)
+		print(" LONG MAX ADYACENTES POSIBLES : " ,l_ady)
 
 		return(adyacentes)
 
@@ -106,9 +102,9 @@ POR PANTALLA.
 EN ESTE EJERCICIO SOLO SE PIDE EJECUCION NI ENTRADA NI DALIDA DE DATOS:
  desactivar las comillas SOLO para LA DEMOSTRACION 
  Y VISUALIZACION DE PANTALLA DE RESULTADOS:
- ______________________________________________________
+ ___________________________________________________________"""
 
 print("1ª ADN ALEATORIO:  ",adn1)
 print("2ª ADN ALEATORIO:  ",adn2)
-print("MAXIMOS NUCLEOTIDOS COMUNES ADNs:" ,ady)_____"""
+print("RELSUTADO MAXIMOS ADYACENTES EN AMBOS ADNs:" ,ady)
 

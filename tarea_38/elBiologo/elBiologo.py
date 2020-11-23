@@ -63,21 +63,26 @@ class Nucleotidos():
 		#recorremos las posibles combinaciones adyacentes
 		ady=0#inicialiar la longitud maxima del patron en cadenas de adn
 		adyacentes=[]
+		contador=0
 		for p in range(len(pos_comb_ady)):
 			patron=""#inicializar/limpiar nomenclaturas, nucleotidos en comun
 			for p1 in pos_comb_ady[p]:#sacamos la primera posible combinacion adyacente
 				patron+=p1#añadimos las numenclaturas en una cadena para sacar el patron
 				#buscamos la cadena patron en adn1 de las posibles combinaciones
 				a1=re.findall(patron, adn1)
-					#buscamos la cadena patron en adn2 de las posibles combinaciones
+				#buscamos la cadena patron en adn2 de las posibles combinaciones
 				a2=re.findall(patron, adn2)
-				if a1 and a2:#si los patrones son iguales
+				if a1 and a2:#si los patrones existen en las dos cadenas
 					y=len(patron)#hallamos la longitud
+
+					if y==ady and patron!=adyacentes[contador]:
+						adyacentes.append(patron)#guardamos la secuencia de longitud maxima
+						contador+=1
 					if y>ady:#comparamos si la longitud es mayor a la encontrada
 						del adyacentes[:]
 						ady=y#guardamos la longitud mas larga
 						adyacentes.append(patron)#guardamos la secuencia de longitud maxima
-						
+						contador=0
 
 
 			"""solo visualizar por pantalla, para correccion.

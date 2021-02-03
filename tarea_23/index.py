@@ -2,7 +2,7 @@
 #de agujero y transparentes
 
 from tkinter import *
-from tkinter import messagebox
+from tkinter import messagebox 
 from ModCodDesc import *
 
 
@@ -16,18 +16,18 @@ raiz.resizable(False,False)
 
 
 
-miFrame= Frame(raiz, width=500, height=400)
-miFrame.config(bg="grey")
+enigma= Frame(raiz, width=500, height=400)
+enigma.config(bg="grey")
 
-miFrame.pack()
-
-
+enigma.pack()
 
 
 
 
 
 
+clav=StringVar()
+clave=StringVar()
 cod=StringVar()
 x=StringVar()
 texto=StringVar()
@@ -35,35 +35,52 @@ textop=StringVar()
 codx=StringVar()
 codigo=StringVar()
 descodificar=StringVar()
+clav=StringVar()
+clv=StringVar()
+def IntroClave():
+    otra_ventana = Toplevel(raiz)
+    otra_ventana.title("Introducir clave")
+    clave=Entry(otra_ventana, textvariable=x)
+    clave.config(bg="#6C571B", cursor="pirate", fg="grey", font=("Comic Sans MS",18))
+    clave.grid(row=3, column=2, padx="10", pady="10", columnspan=4)
+    
+    botonClave=Button(otra_ventana, text="codificar", command=lambda:codificar())
+    botonClave.grid(row=4, column=2, padx="10", pady="10")
+    botonDescodificar=Button(otra_ventana, text="descodificar", command=lambda:descodificar())
+    botonDescodificar.grid(row=4, column=4, padx="10", pady="10")
 def codificar():
+	clv=StringVar()
 	codx=cuadroTexto.get()
-	jugar=Jugada(codx)
+	clv=clav.get()
+	clv=clv.upper()
+	jugar=Jugada(codx, clv)
 	jugar.Repetir()
 	x=jugar.ObtenerLetraCodigo()
-	cod=x
+	cuadroTexto.delete(0, END)
+	cuadroTexto.insert(0, x)
 	
-
-	cerrar=messagebox.askokcancel("**PARA DESCODIFICAR ACEPTA**",cod)
-	if cerrar==True:
-		jugar.descodificar(cod)
-		jugar.RepetirPaso2()
-		descodificar=jugar.ObtenerLetraCodigo2()
-		cerrar=messagebox.askokcancel("**descodificado**",descodificar)
-
-	else:
-		raiz.destroy()
-		
 		#codx=codigo(textop)
 		#print(codx)
+def descodificar():
+	codx=cuadroTexto.get()
+	clvDes=clav.get()
+	jugar=Jugada(codx, clvDes)
+	jugar.barajar(True,clvDes)
+	jugar.descodificar(codx)
+	jugar.RepetirPaso2()
+	descodificar=jugar.ObtenerLetraCodigo2()
+	cuadroTexto.delete(0, END)
+	cuadroTexto.insert(0, descodificar)
+		
 
-load=Label(miFrame, textvariable=cod)
+load=Label(enigma, textvariable=cod)
 load.grid(row=1, column=2)
 load.config(justify="center", bg="grey", fg="#6C571B", font=("Comic Sans MS",18))
 
 
 
 
-cuadroTexto=Entry(miFrame, textvariable=texto)
+cuadroTexto=Entry(enigma, textvariable=texto)
 cuadroTexto.config(bg="#6C571B", cursor="pirate", fg="grey", font=("Comic Sans MS",18))
 
 cuadroTexto.grid(row=3, column=2, padx="10", pady="10", columnspan=4)
@@ -74,12 +91,12 @@ cuadroTexto.grid(row=3, column=2, padx="10", pady="10", columnspan=4)
 #cuadroTexto.config(yscrollcommand=scrollVert.set)
 
 
-nombreLabel=Label(miFrame, text="Introduce el mensaje secreto: ", bg="grey",  fg="#6C571B", font=("Comic Sans MS",18)) 
+nombreLabel=Label(enigma, text="Introduce el mensaje secreto: ",justify="center", bg="grey",  fg="#6C571B", font=("Comic Sans MS",18)) 
 nombreLabel.grid(row=2, column=2, padx="10", pady="10")
 
 
 
-botonCodificar=Button(raiz, text="codificar", command=lambda:codificar())
+botonCodificar=Button(raiz, text="Introducir Clave", command=lambda:IntroClave())
 botonCodificar.pack()
 
 raiz.wm_attributes("-transparentcolor", 'grey')

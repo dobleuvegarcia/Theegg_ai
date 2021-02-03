@@ -5,7 +5,7 @@ import random
 
 class Jugada():
 	"""docstring for Baraja"""
-	def __init__(self,texto):
+	def __init__(self, texto, clave):
 		self.__abc=[]
 		self.__abc=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 		self.__palo = ("Treboles","Diamantes","Corazones","Picas")
@@ -17,13 +17,15 @@ class Jugada():
 				nc=self.__num[n]
 				self.__cartas.append([pc,nc])
 
-		self.__cartas.append(["JOKER_A",53])
+		self.__cartas.append(["JOKER_A",52])
 		self.__cartas.append(["JOKER_B",53])
 		self.__barajado=False
-		self.__cartas=self.barajar(True)
+		self.__clv=clave.upper()
+		self.__cartas=self.barajar(True,self.__clv)
 		self.__baraja2=[]
-		self.__baraja2=self.__cartas.copy()
+		self.__baraja2=self.barajar(True,self.__clv)
 		self.__texto=texto.upper()
+		
 		#print(self.__texto)
 		#LLAMADAS A LAS FUNCIONES PARA REALIZAR LOS PRIMEROS PASOS
 		self.__cartas=self.JOKER_A_JOKER_B(self.__cartas)
@@ -46,18 +48,33 @@ class Jugada():
 
    #PRIMER PASO BARAJAR
     #esta funcion barajea las cartas
-	def barajar(self,barajado):
+	def barajar(self,barajado,clv):
 		self.__barajado=barajado
 		#print(self.__cartas)
 		if (self.__barajado):
-			baraja=self.__cartas
-			self.__cartas=random.sample(baraja,53)
-			return(list(self.__cartas))
+			self.__num_clv=0
+			for l in range(len(self.__clv)):
+				for a in range(len(self.__abc)):
+					if self.__clv[l]==self.__abc[a]:
+						self.__num_clv=a+1+self.__num_clv
+			longCeros=str(self.__num_clv)	
+			lc=len(longCeros)+1
+			decimales=1
+			for i in range(len(longCeros)+1):
+				decimales=decimales*10	
+				
+			self.__num_clv=float(self.__num_clv)/decimales
+
+		#print(self.__num)
+			def clave_baraja():
+				return(self.__num_clv) 
+			random.shuffle(self.__cartas,clave_baraja)
+			return(self.__cartas)
 
 
 
 	
-
+	
 	#SEGUNDO PASO CAMBIAR POSICION JOKERS
 	#esta funcion posiciona los jokers a y b segun el solitario pasandole la baraja ya barajeada
 	def JOKER_A_JOKER_B(self,barajados):
@@ -120,6 +137,7 @@ class Jugada():
 		corte1=[]
 		corte2=[]
 		corte3=[]
+		x=0
 		
 		for j in range(53):
 			if pos_jokers[j][1]!=53:
@@ -128,7 +146,7 @@ class Jugada():
 			else:
 				i=pos_jokers.index(pos_jokers[j])
 				corte2.insert(0,pos_jokers[j])
-				#print(i)
+				print(i)
 				x=i+1
 				break;
 		#print(corte1)
@@ -323,7 +341,7 @@ class Jugada():
 	def ObtenerLetraCodigo2(self):
 		#print(self.__num)
 		for i in range(len(self.__num)):
-			num=self.__num[i][7]-self.__num[i][8]
+			num=self.__num[i][2]-self.__num[i][3]
 			self.__num[i].append(num)
 			if num<-26:
 				num=num+52
@@ -334,11 +352,10 @@ class Jugada():
 			else:
 				self.__num[i].append(+0)
 			self.__num[i].append(num)
-		#print(self.__num2)
 		codigo=""
 		for i in range(len(self.__num)):
 			for a in range(len(self.__abc)):
-				if (self.__num[i][11]==self.__abc.index(self.__abc[a])+1):
+				if (self.__num[i][6]==self.__abc.index(self.__abc[a])+1):
 					letra=self.__abc[a]
 					self.__num[i].append(letra)
 					codigo=codigo+letra

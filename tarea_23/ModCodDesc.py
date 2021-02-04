@@ -58,7 +58,7 @@ class Jugada():
 				for a in range(len(self.__abc)):
 					if clv[l]==self.__abc[a]:
 						self.__num_clv=a+1+self.__num_clv
-			print(self.__num_clv)
+			#print(self.__num_clv)
 			longCeros=str(self.__num_clv)	
 			lc=len(longCeros)+1
 			decimales=1
@@ -67,7 +67,7 @@ class Jugada():
 				
 			self.__num_clv=float(self.__num_clv)/decimales
 
-			print(self.__num_clv)
+			#print(self.__num_clv)
 			def clave_baraja():
 				return(self.__num_clv) 
 			random.shuffle(self.__cartas,clave_baraja)

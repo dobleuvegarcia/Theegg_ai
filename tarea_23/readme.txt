@@ -8,12 +8,13 @@ enteros, flotantes, booleanos, ... y en este caso la variable o parámetro que s
 tipo String.
 2.- Una segunda función que recoja el mensaje cifrado y lo descifre utilizando este mismo algoritmo.
 
-para codificar varias veces la misma frase pero cambiando la parabla clave tendras k cerrar y abrir de nuevo la ventana 
-de intruduccion de la clave
+
 
 
 He creado una interface a la cual le he añadido unos efectos agujero en transparencias.
 para introducir el texto a codificar tendras que clicar el la calavera sobre la linea del inpùt
-Para codificar dale al boton codificar y luego aceptar.
+Para codificar dale al boton codificar y luego introducir la palabra clave en la ventana emergente.
+Para codificar varias veces la misma frase pero cambiando la parabla clave tendras k cerrar y abrir de nuevo la ventana 
+de intruduccion de la clave.
 
 un saludo .

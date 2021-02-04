@@ -20,10 +20,12 @@ class Jugada():
 		self.__cartas.append(["JOKER_A",52])
 		self.__cartas.append(["JOKER_B",53])
 		self.__barajado=False
+		clave=str(clave)
 		self.__clv=clave.upper()
-		self.__cartas=self.barajar(True,self.__clv)
+		self.__num_clv=0
+		self.__cartas=self.barajar(True, self.__clv)
 		self.__baraja2=[]
-		self.__baraja2=self.barajar(True,self.__clv)
+		self.__baraja2=self.barajar(True, self.__clv)
 		self.__texto=texto.upper()
 		
 		#print(self.__texto)
@@ -52,11 +54,11 @@ class Jugada():
 		self.__barajado=barajado
 		#print(self.__cartas)
 		if (self.__barajado):
-			self.__num_clv=0
-			for l in range(len(self.__clv)):
+			for l in range(len(clv)):
 				for a in range(len(self.__abc)):
-					if self.__clv[l]==self.__abc[a]:
+					if clv[l]==self.__abc[a]:
 						self.__num_clv=a+1+self.__num_clv
+			print(self.__num_clv)
 			longCeros=str(self.__num_clv)	
 			lc=len(longCeros)+1
 			decimales=1
@@ -65,7 +67,7 @@ class Jugada():
 				
 			self.__num_clv=float(self.__num_clv)/decimales
 
-		#print(self.__num)
+			print(self.__num_clv)
 			def clave_baraja():
 				return(self.__num_clv) 
 			random.shuffle(self.__cartas,clave_baraja)

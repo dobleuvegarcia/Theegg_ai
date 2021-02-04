@@ -4,6 +4,7 @@
 from tkinter import *
 from tkinter import messagebox 
 from ModCodDesc import *
+import tkinter as tk
 
 
 raiz=Tk()
@@ -21,11 +22,8 @@ enigma.config(bg="grey")
 
 enigma.pack()
 
-
-
-
-
-
+c=[]
+i=StringVar()
 clav=StringVar()
 clave=StringVar()
 cod=StringVar()
@@ -34,24 +32,24 @@ texto=StringVar()
 textop=StringVar()
 codx=StringVar()
 codigo=StringVar()
-descodificar=StringVar()
-clav=StringVar()
+desco=StringVar()
 clv=StringVar()
 def IntroClave():
     otra_ventana = Toplevel(raiz)
     otra_ventana.title("Introducir clave")
-    clave=Entry(otra_ventana, textvariable=x)
-    clave.config(bg="#6C571B", cursor="pirate", fg="grey", font=("Comic Sans MS",18))
-    clave.grid(row=3, column=2, padx="10", pady="10", columnspan=4)
+    cText=tk.Entry(otra_ventana)
+    cText.config(bg="#6C571B", cursor="pirate", fg="grey", font=("Comic Sans MS",18))
+    cText.grid(row=3, column=2, padx="10", pady="10", columnspan=4)
     
-    botonClave=Button(otra_ventana, text="codificar", command=lambda:codificar())
+    botonClave=Button(otra_ventana, text="codificar", command=lambda:codificar(cText.get()))
     botonClave.grid(row=4, column=2, padx="10", pady="10")
-    botonDescodificar=Button(otra_ventana, text="descodificar", command=lambda:descodificar())
+    botonDescodificar=Button(otra_ventana, text="descodificar", command=lambda:descodificar(cText.get()))
     botonDescodificar.grid(row=4, column=4, padx="10", pady="10")
-def codificar():
+    otra_ventana.mainloop()
+def codificar(x):
 	clv=StringVar()
 	codx=cuadroTexto.get()
-	clv=clav.get()
+	clv=str(x)
 	clv=clv.upper()
 	jugar=Jugada(codx, clv)
 	jugar.Repetir()
@@ -61,16 +59,16 @@ def codificar():
 	
 		#codx=codigo(textop)
 		#print(codx)
-def descodificar():
+def descodificar(x):
 	codx=cuadroTexto.get()
-	clvDes=clav.get()
+	clvDes=str(x)
 	jugar=Jugada(codx, clvDes)
 	jugar.barajar(True,clvDes)
 	jugar.descodificar(codx)
 	jugar.RepetirPaso2()
-	descodificar=jugar.ObtenerLetraCodigo2()
+	desco=jugar.ObtenerLetraCodigo2()
 	cuadroTexto.delete(0, END)
-	cuadroTexto.insert(0, descodificar)
+	cuadroTexto.insert(0, desco)
 		
 
 load=Label(enigma, textvariable=cod)

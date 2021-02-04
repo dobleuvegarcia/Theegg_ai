@@ -37,7 +37,7 @@ clv=StringVar()
 def IntroClave():
     otra_ventana = Toplevel(raiz)
     otra_ventana.title("Introducir clave")
-    cText=tk.Entry(otra_ventana)
+    cText=tk.Entry(otra_ventana, textvariable=i)
     cText.config(bg="#6C571B", cursor="pirate", fg="grey", font=("Comic Sans MS",18))
     cText.grid(row=3, column=2, padx="10", pady="10", columnspan=4)
     

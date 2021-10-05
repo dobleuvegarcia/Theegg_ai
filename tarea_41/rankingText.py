@@ -1,6 +1,5 @@
 from io import open
 import re
-from itertools import groupby
 
 class rankingText():
 	"""En este algoritmo abrimos un archivo para recorrerlo y buscar

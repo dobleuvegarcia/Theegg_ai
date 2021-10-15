@@ -12,17 +12,26 @@ td.video{
 	height:30%;
 	
 	}
-td.texto{
+.texto{
 	text-align: left;
 	margin-left: 35px;
-	width: auto;
+	width: 35%;
+	height: 40%;
+	background-image:url(micro.png);
+	background-repeat: no-repeat;
+	border-width: 0px;
 	}
 
 table.centrada{
 	width:100%;
-	heigth:100%;
-	background-color:#F0F;
+	height:100%;
+	background-color:whitesmoke;
 	border:dashed;
 	margin-left:5%;
 	margin-top:5%;
-	}
+}
+.micro{
+	width: 60%;
+	height: 65%;
+	background-color:whitesmoke;
+}

@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	width:90%;
+	height:100%;
+	background-color:#96F;
+	font:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	resize:both;
+	}
+td.video{
+	width:50%;
+	height:30%;
+	
+	}
+td.texto{
+	text-align: left;
+	margin-left: 35px;
+	width: auto;
+	}
+
+table.centrada{
+	width:100%;
+	heigth:100%;
+	background-color:#F0F;
+	border:dashed;
+	margin-left:5%;
+	margin-top:5%;
+	}

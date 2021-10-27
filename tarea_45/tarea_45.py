@@ -11,12 +11,12 @@ def mayor_menor():
 		indice=min(range(len(lista)),key=lista.__getitem__)
 		if i ==0:
 			"""inicializamos la nueva lista con el valor minimo 
-			borramos pasando el indice al valor en la lista inicial"""
+			borramos pasando el indice del valor en la lista inicial"""
 			lista_ordenada.insert(0,valor)
 			lista.pop(indice)
 		else:
 			"""anadimos el valor minimo a la lista nueva
-			y lo borramos pasando el indice""" 
+			y lo borramos pasando el indice el valor de la lista inicial""" 
 			lista_ordenada.append(valor)
 			lista.pop(indice)
 

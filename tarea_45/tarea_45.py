@@ -33,7 +33,7 @@ def buscar(num):
 		sumaremos el indice de la primera posicion(inicio) y 
 		el indice de la ultima posicion posible(fin) y 
 		lo dividimos entre dos: 
-		para calcular la posicion entre del puntero entre principio y fin
+		para calcular la posicion del puntero entre principio y fin
 		del siguiente valor a comparar por cada tramo del bucle."""
 		posicion=int((inicio+fin)/2)
 		"""un vez hallado el valor de la posicion del medio, preguntamos 

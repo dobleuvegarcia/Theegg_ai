@@ -5,4 +5,5 @@ import seaborn as sn
 data=pd.read_csv('26_2.csv',encoding="ISO-8859-1", header=0, sep = ';')
 registro=len(data)
 print(registro)
-print(data.head(registro))
+data_filtrado=data.fillna(0)
+print(data_filtrado.head(registro))

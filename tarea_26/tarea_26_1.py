@@ -1,7 +1,6 @@
 import numpy as np 
 import matplotlib.pyplot as plt
 import pandas as pd
-import seaborn as sn
 import statistics as stat
 data=pd.read_csv('26_1.csv',encoding="ISO-8859-1", header=0, sep = ';')
 data_copy=data.copy

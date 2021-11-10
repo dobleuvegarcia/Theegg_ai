@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 data=pd.read_csv('26_2.csv',encoding="ISO-8859-1", header=0, sep = ';')
 registro=len(data)
-print(registro)
+#print(registro)
 data_filtrado=data.fillna(0)
-print(data_filtrado.head(registro))
+#print(data_filtrado.head(registro))
 
 for i in range(1,5):
 	
@@ -47,7 +47,7 @@ for i in range(1,5):
 		y_m=data_filtrado["Emakumeak: hilgarritasuna / Mujeres: letalidad"]
 		plt.plot(xph, y_m, label='Mujeres: letalidad')
 		y_t_p=data_filtrado["Guztira l / Total l"]
-		plt.plot(xph, y_t_p, label='Total')
+		plt.plot(xph, y_t_p, label='Media')
 		plt.xlabel('edad')
 		plt.ylabel('porcentaje de contagios')
 		plt.legend()

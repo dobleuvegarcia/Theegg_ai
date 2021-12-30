@@ -4,7 +4,7 @@ def pedirDatos():
 	""" en esta funcion pedimos un numero, si no es entero
 	saltara el except y si no devolvera el numero introducido """
 	try:
-		num=int(input("intruduce un numero"))
+		num=int(input("Introduce un numero:   "))
 	except ValueError:
 		print("------------:Error:--------------")
 		pedirDatos()
@@ -27,7 +27,7 @@ def pedirOperacion(n1,n2):
 			resultado=operacion(n1,n2,op)
 			print(resultado)
 	except ValueError:
-		print("introduce un operador")
+		print("ERROR: +, -, *, /")
 		pedirOperacion(n1,n2)
 	
 	
@@ -45,7 +45,7 @@ def operacion(n1,n2,op):
 
 #funcion que suma dos numeros dados
 def suma(num1,num2):
-	result=int(num1 + num2)
+	result=int(num1) + (num2)
 	return(result)
 
 #funcion que resta dos numeros dados
